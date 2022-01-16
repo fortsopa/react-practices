@@ -19,6 +19,11 @@ class App extends React.Component {
       .then(users => this.setState({ monsters: users })); //this.setState() is also Async
   }
 
+  //Arrow function is binding its "this" to the App. This is extremely useful!
+  handleChange = e => {
+    this.setState({ searchField: e.target.value });
+  };
+
   //This will be called everytime when the state changes
   render() {
     //console.log(this.state.monsters); //--> Shows the this on console. At this point, it's the App class.
@@ -28,9 +33,10 @@ class App extends React.Component {
     );
     return (
       <div className="App">
+        <h1> Monster Dex </h1>
         <SearchBox
           placeholder="Search monsters"
-          handleChange={e => this.setState({ searchField: e.target.value })}
+          handleChange={this.handleChange}
           //everytime a change is triggered on the input element, state is changing.
           //since the setState() is Async, we can pass a second argument.
         />

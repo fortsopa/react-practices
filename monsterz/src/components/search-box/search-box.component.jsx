@@ -19,4 +19,4 @@ that we will alter inside the App component in App.js.
 the onChange is a react tag and its value is passed from the components props as handleChange for example.
 
 This handleChange is passed to the SearchBox component inside other components like as in App component.
-After than the state changing operation is attached to the onChange which in the end converted to an onchange HTML element*/
+Only after than the state changing operation is attached to the onChange which in the end converted to an onchange HTML element*/
